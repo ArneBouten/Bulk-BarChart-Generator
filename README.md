@@ -9,7 +9,7 @@ This R script is designed to analyze survey (Likert-scale) data from an SPSS fil
 
 ## Setup Instructions
 1. Prepare the SPSS data file:
-     - Ensure that your SPSS data file has a structure similar to "example_data_file.sav".
+     - Ensure that your SPSS data file has a structure similar to "example_data_file_SPSS.sav".
      - The graphs will be automatically created based on the labels, values, etc. defined in SPSS, so properly setting up the SPSS file is crucial.
      - Create new titles for each question, add questions as labels, define values (e.g., for "Group": 1 = children, etc.), set missing values to -999.
 2. Place your SPSS data file in the same directory as the R script.
