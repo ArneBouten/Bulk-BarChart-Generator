@@ -128,9 +128,9 @@ for (q in questions) {
   }
  # Add a new slide with the "Title and Content" layout
  ppt <- add_slide(ppt, layout = "Title and Content", master = "Office Theme")
- 
- # Creating a custom title for each slide in PowerPoint
+
  # ***** ADAPT THESE VALUES *****
+ # Creating a custom title for each slide in PowerPoint
  # Update the switch statement with the desired short titles for each question
  # If no match is found, the original question label will be used as a fallback
  short_title <- switch(q,
@@ -148,9 +148,9 @@ for (q in questions) {
  
  # Increment the question counter
  question_counter <- question_counter + 1
- 
- # Adding section separator slides at specific question intervals
+
  # ***** ADAPT THESE VALUES *****
+ # Adding section separator slides at specific question intervals
  # Modify the section names and their corresponding question counter values as needed
  if (question_counter == 5 || question_counter == 11 || question_counter == 24 || question_counter == 27) {
    section_name <- ifelse(question_counter == 5, "SECTION 2",
