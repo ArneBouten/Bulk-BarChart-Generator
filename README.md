@@ -1,4 +1,5 @@
 # README for bulk-barchart-generator
+![image](https://github.com/ArneBouten/bulk-barchart-generator/assets/112613528/79c5c45a-cdfc-4dcc-b932-501e5a1a9a6a)
 
 ## Overview
 This R script is designed to analyze survey (Likert-scale) data from an SPSS file and generate a PowerPoint presentation with a bar chart on each slide. It creates a presentation for each group in the data (e.g., children, adolescents, adults, etc.) For each question, it creates a double bar chart comparing the responses of one group to all the other groups combined.
