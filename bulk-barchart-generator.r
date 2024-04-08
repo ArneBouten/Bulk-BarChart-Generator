@@ -55,16 +55,20 @@ create_bar_chart <- function(data, question, group_var, group_value, current_gro
 # DATA LOADING AND PREPARATION
 # ========================
 
-# Load the SPSS data file (replace "your_data_file.sav" with the actual file name)
+# ***** ADAPT THIS VALUE *****
+# Replace "your_data_file.sav" with the actual file name of your SPSS data file
 your_data <- read_sav("your_data_file.sav")
 
-# Replace missing value placeholder (e.g., -999) with NA
+# ***** ADAPT THIS VALUE *****
+# Replace -999 with the actual missing value placeholder used in your data (if different)
 your_data[your_data == -999] <- NA
 
-# Convert the group variable to a factor to access its labels (replace "your_group_variable" with the actual variable name)
+# ***** ADAPT THIS VALUE *****
+# Replace "your_group_variable" with the actual variable name representing the groups in your data
 your_data$your_group_variable <- as_factor(your_data$your_group_variable)
 
-# List of questions to create charts for (replace with your actual question variable names)
+# ***** ADAPT THESE VALUES *****
+# Replace the question variable names with your actual question variable names
 questions <- c("question1", "question2", "question3", ...)
 
 # ========================
@@ -92,7 +96,8 @@ ppt <- read_pptx()
 # Add a title slide to the presentation
  ppt <- add_slide(ppt, layout = "Title Slide", master = "Office Theme")
  
- # Create the text object with your title
+ # ***** ADAPT THIS VALUE *****
+ # Replace "YOUR TITLE" with the desired title for your PowerPoint presentation
  group_label_upper <- toupper(group_value)  # Convert the group label to uppercase
  my_text <- ftext(paste0("YOUR TITLE ", group_label_upper), 
                   prop = fp_text(font.size = 54, bold = TRUE, font.family = "Calibri (Headings)"))
@@ -103,7 +108,8 @@ ppt <- read_pptx()
  # Add the formatted text to the slide, using the center alignment for the paragraph
  ppt <- ph_with(ppt, value = fpar(my_text, fp_p = my_format), location = ph_location_type(type = "ctrTitle"))
 
-# Add a section separator slide at the beginning for the first section
+# ***** ADAPT THIS VALUE *****
+# Replace "SECTION 1" with the desired name for the first section
 ppt <- add_slide(ppt, layout = "Title Slide", master = "Office Theme")
 ppt <- ph_with(ppt, value = "SECTION 1", location = ph_location_type(type = "ctrTitle"))
 
@@ -124,8 +130,9 @@ for (q in questions) {
  ppt <- add_slide(ppt, layout = "Title and Content", master = "Office Theme")
  
  # Creating a custom title for each slide in PowerPoint
- # Get the short title for the current question based on a predefined mapping
- # If no match is found, use the original question label as a fallback
+ # ***** ADAPT THESE VALUES *****
+ # Update the switch statement with the desired short titles for each question
+ # If no match is found, the original question label will be used as a fallback
  short_title <- switch(q,
                        "question1" = "Question 1 Title",
                        "question2" = "Question 2 Title",
@@ -143,9 +150,9 @@ for (q in questions) {
  question_counter <- question_counter + 1
  
  # Adding section separator slides at specific question intervals
- # Check if it's time to add a section separator slide based on the question counter
+ # ***** ADAPT THESE VALUES *****
+ # Modify the section names and their corresponding question counter values as needed
  if (question_counter == 5 || question_counter == 11 || question_counter == 24 || question_counter == 27) {
-   # Determine the section name based on the question counter
    section_name <- ifelse(question_counter == 5, "SECTION 2",
                           ifelse(question_counter == 11, "SECTION 3",
                                  ifelse(question_counter == 24, "SECTION 4", "SECTION 5")))
@@ -156,7 +163,8 @@ for (q in questions) {
  }
 }
  
-# Save the PowerPoint presentation with the group's label in the title
+# ***** ADAPT THIS VALUE *****
+# Replace "your_output_prefix" with the desired prefix for the output PowerPoint file names
 ppt_file_name <- paste0("your_output_prefix_", group_label, ".pptx")
 print(ppt, target = ppt_file_name)
 }
