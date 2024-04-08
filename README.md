@@ -5,7 +5,7 @@
 This R script is designed to analyze survey (Likert-scale) data from an SPSS file and generate a PowerPoint presentation with a bar chart on each slide. It creates a presentation for each group in the data (e.g., children, adolescents, adults, etc.) For each question, it creates a double bar chart comparing the responses of one group to all the other groups combined.
 
 ## Prerequisites
-- R environment set up on your system.
+- R (and SPSS) installed.
 
 ## Setup Instructions
 1. Prepare the SPSS data file:
